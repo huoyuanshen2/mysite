@@ -12,6 +12,10 @@ class Question(models.Model):
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'
+    class Meta:
+        permissions = (
+            ("scan_question", "自定义查看权限"),
+        )
 
 
 class Choice(models.Model):
